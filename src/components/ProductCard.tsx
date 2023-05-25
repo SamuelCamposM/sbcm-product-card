@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from "../styles/styles.module.css";
-import useProduct from "../hooks/useProduct";
-import { createContext } from "react";
+import React from 'react';
+import styles from '../styles/styles.module.css';
+import useProduct from '../hooks/useProduct';
+import { createContext } from 'react';
 
 import {
   InitialValues,
@@ -9,7 +9,7 @@ import {
   ProductCardHandlers,
   ProductContextProps,
   onChangeArgs,
-} from "../interfaces/ProductsInterfaces";
+} from '../interfaces/ProductsInterfaces';
 
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
@@ -37,13 +37,18 @@ export const ProductCard = ({
   // const increaseBy = (value: number) => {
   // setcounter((prev) => Math.max(prev + value, 0));
   // };
-  const { counter, increaseBy, maxCount, isMaxCountReached, reset } =
-    useProduct({
-      onChange,
-      product,
-      value,
-      initialValues,
-    });
+  const {
+    counter,
+    increaseBy,
+    maxCount,
+    isMaxCountReached,
+    reset,
+  } = useProduct({
+    onChange,
+    product,
+    value,
+    initialValues,
+  });
   return (
     <Provider
       value={{
